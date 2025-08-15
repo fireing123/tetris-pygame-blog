@@ -35,9 +35,9 @@ class Board:
                 if value:
                     draw_block(surface, j, i, COLORS[color])
                     
-        end_y = len(self.board[i]) * SIZE
-        end_x = len(self.board) * SIZE
+        end_x = len(self.board[i]) * SIZE
+        end_y = len(self.board) * SIZE
         for i in range(len(self.board) + 1):
-            pygame.draw.line(surface, (127, 127, 127), (0, i * SIZE), (end_y, i * SIZE))
+            pygame.draw.line(surface, (127, 127, 127), (0, i * SIZE), (end_x, i * SIZE))
         for i in range(len(self.board[0]) + 1):
-            pygame.draw.line(surface, (127, 127, 127), (i * SIZE, 0), (i * SIZE, end_x))
+            pygame.draw.line(surface, (127, 127, 127), (i * SIZE, 0), (i * SIZE, end_y))
