@@ -69,28 +69,6 @@ class Board:
             for j in range(len(block[i])):
                 if block[i][j]:
                     self.board[y+i][x+j] = (color, True)
-                
-    def check_full_row(self, y):
-        for c, i in self.board[y]:
-            if not i:
-                return False
-        return True
-    
-    def get_full_rows(self):
-        arr = {}
-        for i in range(len(self.board)):
-            if self.check_full_row(i):
-                arr[i] = True
-        return arr
-    
-    def remove_rows(self):
-        rows = self.get_full_rows()
-        l = len(rows.keys())
-        arr = [[(None, False)] * len(self.board[0]) for i in range(l)]
-        for i in range(len(self.board)):
-            if i not in rows:
-                arr.append(self.board[i])
-        self.board = arr
     
     def render(self, surface):
         for i in range(len(self.board)):
